@@ -1,0 +1,36 @@
+aw https://en.wikipedia.org/wiki/Number
+get web|en.wikipedia.org // ako koristim drugu verziju queryija onda ide get web|https://en.wikipedia.org/wiki/Number
+query web|en.wikipedia.org // ako koristim drugu verziju queryija onda ide query web|https://en.wikipedia.org/wiki/Number
+get web|summary
+aw https://leetcode.com/
+get web|summary
+query web|https://leetcode.com/
+cws
+get web|dsadasda
+get web|summary
+ad data
+ad data3
+// ovde modifikujem fajl corpus_riker  da vidimo da li directory crawler radi svoj posao? Trebalo bi da vrati 3 1 1, al ja dodam jos 1 one u tekst1.txt i onda ce get da vrati 4 1 1
+get file|corpus_riker
+query file|corpus_riker
+query file|corpus_troll
+get file|corpus_troll
+aw https://www.gatesnotes.com/2019-Annual-Letter
+get web|www.gatesnotes.com
+query web|summary
+query file|summary
+get file|summary
+query file|summary
+query web|en.wikipedia.org // ovde se vidi razlika izmedju wikipedije samo i ispod u getu wikipedija + leetcode.
+get web|summary
+cws
+cfs
+ad data2
+query file|summary
+get file|summary // vrati ukupno 19 4 1 za sve file-ove lepo, osim ako nemam onaj jedan dodatni one za proveru directory crawlera onda 20 4 1
+aw https://www.gatesnotes.com/2019-Annual-Letter
+aw dsadsada
+get web|summary // bez onog checka preko URL u WEBSCANNING JOB ovde bi trebalo da pukne kod jer Jsoup ne prepozna 'javascript:void(0);' kao link.
+get file|https://www.gatesnotes.com/2019-Annual-Letter
+query file|https://www.gatesnotes.com/2019-Annual-Letter
+stop
