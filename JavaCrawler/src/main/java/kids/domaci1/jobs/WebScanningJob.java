@@ -70,16 +70,16 @@ public class WebScanningJob implements ScanningJob, Callable<Map<String, Integer
 
 
             for (Element link : links) {
-//                URL u = null;
-//                try {
-//                    if(link.attr("abs:href").contains("#"))
-//                        continue;
-//                    u = new URL(link.attr("abs:href"));
-//                    u.toURI();
-//                } catch (MalformedURLException | URISyntaxException e) {
+               URL u = null;
+               try {
+                   if(link.attr("abs:href").contains("#"))
+                       continue;
+                   u = new URL(link.attr("abs:href"));
+                   u.toURI();
+               } catch (MalformedURLException | URISyntaxException e) {
 //                    System.out.println("POGRESAN URL : " + link.attr("abs:href") );
-//                    continue;
-//                } // ovo za test otkomentarisati ali generalno ne moze lepo da se testira sa ovim
+                   continue;
+               } // ovo za test otkomentarisati ali generalno ne moze lepo da se testira sa ovim
 
                 for (String keyword : Config.keywords) {
                     int count = countOccurrences(bodyText, keyword);
